@@ -1,23 +1,30 @@
 App.Player = DS.Model.extend( {
   name: DS.attr('string'),
-  team: DS.belongsTo('team', {async:true})
+  team: DS.belongsTo('team', {async:true}),
+  image: DS.attr('string'),
+  shotattempts: DS.hasMany('shotattempt', {async:true})
 });
 
 App.Player.FIXTURES = [
   {
     id: 1,
-    name: 'Muggsy Bogues'
+    name: 'Alonzo Mourning',
+    shotattempts: [1, 2],
+    image: 'imgs/1.png'
   },
   {
     id: 2,
-    name: 'Shawn Kemp'
+    name: 'Shawn Kemp',
+    image: 'imgs/2.png'
   },
   {
     id: 3,
-    name: 'Gary Payton'
+    name: 'Detlef Schrempf',
+    image: 'imgs/3.png'
   },
   {
     id: 4,
-    name: 'Larry Johnson'
+    name: 'Larry Johnson',
+    image: 'imgs/4.png'
   }
 ]

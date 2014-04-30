@@ -2,12 +2,25 @@
 .ember-application {
     margin: 20px;
 }
+body{
+  background:url('../imgs/body_bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-top: 100px;
+}
 #main {
   width: 650px;
   height: 500px;
   margin: 0 auto;
   border: 1px orange dashed;
   padding-left: 10px;
+  background-color: white;
+}
+#teams_container {
+  width: 25%;
+  height: 87%;
+  float: left;
+  border: 1px red dashed;
 }
 .team {
   width: 100%;
@@ -21,19 +34,39 @@
   border: 1px black dashed;
 }
 
-
-#teams_container {
-  width: 25%;
-  height: 87%;
-  float: left;
-  border: 1px green dashed;
-}
-
 #team_info {
-  width: 30%;
+  width: 73%;
   height: 87%;
   float: left;
-  margin-left: 25px;
+  margin-left: 10px;
   text-align: center;
   border: 1px green dashed;
 }
+
+#players_container {
+  border: 1px red dashed;
+  width: 39%;
+  height: 100%;
+  margin-right: 10px;
+  float:left;
+}
+#player_info {
+  border: black 1px dashed;
+  float: right;
+  width: 58%;
+  height: 100%;
+}
+.player_pic {
+  width: 30%;
+  height: 30%;
+  display: block;
+  margin: 0 auto;
+}
+#player_title{
+  font-size: 1.4em;
+}
+#logo{
+  width: 15%;
+  height: 15%;
+}
+
