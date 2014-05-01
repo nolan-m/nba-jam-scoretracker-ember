@@ -24,7 +24,7 @@ App.Player.FIXTURES = [
   {
     id: 3,
     name: 'Detlef Schrempf',
-    shots: [1],
+    shots: [],
     total_scored: 0,
     image: 'imgs/schrempf.png'
   },
