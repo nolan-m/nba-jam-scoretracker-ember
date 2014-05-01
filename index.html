@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>NBA JAM Statskeepr</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -31,11 +31,22 @@
   </script>
 
   <script type="text/x-handlebars" id="team">
-  <div id="players_container"
+  <div id="players_container">
+    <h4>Starting Lineup</h4>
     {{name}}
-    {{#each player in players}}
-      {{#link-to 'player' player.id}}<div class='player'>{{ player.name }} | {{player.id}}</div>{{/link-to}}
+    <p>test</p>
+    {{#each player in first_p}}
+        2
     {{/each}}
+    -------------
+   
+
+    <h4>Bench</h4>
+     {{#each player in players}}
+      {{#link-to 'player' player.id}}<div class='player'>{{ player.name }}</div>{{/link-to}}
+    {{/each}}
+
+    {{input type="text" id="new-player" value=playerName action="addPlayer"}}
     </div>
 
     <div id='player_info'>
@@ -49,9 +60,6 @@
     <img {{bind-attr src='image'}} class='player_pic'>
     <h4 id='name'>{{name}}</h4>
     <div class='score'>
-      {{#each shot in shots}}
-        {{total_scored += shot.scored}}
-      {{/each}}
       Total: {{total}}
       {{#each shot in shots}}
         {{shot.scored}}
@@ -75,6 +83,7 @@
   <script src="js/models/player.js"></script>
   <script src="js/models/shot.js"></script>
   <script src="js/controllers/player_controller.js"></script>
+  <script src="js/controllers/team_controller.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
 </body>

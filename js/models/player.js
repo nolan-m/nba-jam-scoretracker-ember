@@ -2,7 +2,6 @@ App.Player = DS.Model.extend( {
   name: DS.attr('string'),
   team: DS.belongsTo('team', {async:true}),
   image: DS.attr('string'),
-  total_scored: DS.attr('integer')
   shots: DS.hasMany('shot', {async:true})
 });
 
