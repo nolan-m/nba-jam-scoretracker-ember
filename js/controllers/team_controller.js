@@ -3,7 +3,7 @@ App.TeamController = Ember.ObjectController.extend({
 	  var players = this.get('players');
 	  var first = players.objectsAt([0, 1]);
 	  return first;
-	}.property('first_p'),
+	}.property('first_p.@each.name'),
   actions: {
     addPlayer: function() {
       var name = this.get('playerName');

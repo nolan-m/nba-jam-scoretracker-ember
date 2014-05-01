@@ -1,5 +1,6 @@
 App = Ember.Application.create({LOG_TRANSITIONS: true});
 
+App.ApplicationSerializer = DS.LSSerializer.extend();
 App.ApplicationAdapter = DS.FixtureAdapter.extend({
   namespace: 'statskeeper'
 });

@@ -9,8 +9,8 @@ body{
   padding-top: 100px;
 }
 #main {
-  width: 650px;
-  height: 500px;
+  width: 750px;
+  height: 600px;
   margin: 0 auto;
   border: 1px orange dashed;
   padding-left: 10px;
@@ -18,7 +18,7 @@ body{
 }
 #teams_container {
   width: 25%;
-  height: 87%;
+  height: 77%;
   float: left;
   border: 1px red dashed;
 }
@@ -36,7 +36,7 @@ body{
 
 #team_info {
   width: 73%;
-  height: 87%;
+  height: 77%;
   float: left;
   margin-left: 10px;
   text-align: center;
@@ -76,5 +76,8 @@ body{
   margin: 0 auto;
   margin-bottom: 5px;
   display: block;
+}
+input {
+  width: 150px;
 }
 

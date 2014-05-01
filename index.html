@@ -5,7 +5,7 @@
   <title>NBA JAM Statskeepr</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -35,16 +35,8 @@
 
   <script type="text/x-handlebars" id="team">
   <div id="players_container">
-    <h4>Starting Lineup</h4>
-    {{name}}
-    <p>test</p>
-    {{#each player in first_p}}
-        2
-    {{/each}}
-    -------------
-   
+    <h4>Players</h4>
 
-    <h4>Bench</h4>
      {{#each player in players}}
       {{#link-to 'player' player.id}}<div class='player'>{{ player.name }}</div>{{/link-to}}
     {{/each}}
@@ -63,7 +55,9 @@
     <img {{bind-attr src='image'}} class='player_pic'>
     <h4 id='name'>{{name}}</h4>
     <div class='score'>
-      Total: {{total}}
+      Total: {{total_scored}}
+      <p>------</p>
+      <p>Shots</p>
       {{#each shot in shots}}
         {{shot.scored}}
       {{/each}}
