@@ -12,27 +12,55 @@ App.Player.FIXTURES = [
     name: 'Alonzo Mourning',
     shots: [],
     total_scored: 0,
-    image: 'imgs/1.png'
+    image: 'imgs/mourning.png'
   },
   {
     id: 2,
     name: 'Shawn Kemp',
     shots: [],
     total_scored: 0,
-    image: 'imgs/2.png'
+    image: 'imgs/kemp.png'
   },
   {
     id: 3,
     name: 'Detlef Schrempf',
     shots: [1],
     total_scored: 0,
-    image: 'imgs/3.png'
+    image: 'imgs/schrempf.png'
   },
   {
     id: 4,
     name: 'Larry Johnson',
     shots: [],
     total_scored: 0,
-    image: 'imgs/4.png'
+    image: 'imgs/ljohnson.png'
+  },
+  {
+    id: 5,
+    name: 'Scottie Pippen',
+    shots: [],
+    total_scored: 0,
+    image: 'imgs/pippen.png'
+  },
+  {
+    id: 6,
+    name: 'Horace Grant',
+    shots: [],
+    total_scored: 0,
+    image: 'imgs/grant.png'
+  },
+  {
+    id: 7,
+    name: 'John Stockton',
+    shots: [],
+    total_scored: 0,
+    image: 'imgs/stockton.png'
+  },
+  {
+    id: 8,
+    name: 'Karl Malone',
+    shots: [],
+    total_scored: 0,
+    image: 'imgs/malone.png'
   }
 ]

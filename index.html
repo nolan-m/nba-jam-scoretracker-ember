@@ -10,6 +10,9 @@
 <body>
 
   <script type="text/x-handlebars">
+  <div id='header'>
+    <img src='imgs/boom.png' id='boom'>
+  </div>
     <div id='main'>
       <h2><img src='imgs/logo.png' id='logo'>
         Statskeepr</h2>
@@ -22,9 +25,10 @@
       {{#each}}
         {{#link-to 'team' this}} <div class='team'>{{name}}</div>{{/link-to}}
       {{/each}}
-
-      <p>Add Team</p>
-      {{input type="text" id="new-team" value=teamName action="addTeam"}}
+      <div id='add_team'>
+        <h5>Add Team</h5>
+        {{input type="text" id="new-team" value=teamName action="addTeam"}}
+      </div>
     </div>
 
     <div id='team_info'>
@@ -35,13 +39,16 @@
 
   <script type="text/x-handlebars" id="team">
   <div id="players_container">
+    <img {{bind-attr src='image'}} class='team_pic'>
     <h4>Players</h4>
 
      {{#each player in players}}
       {{#link-to 'player' player.id}}<div class='player'>{{ player.name }}</div>{{/link-to}}
     {{/each}}
-
-    {{input type="text" id="new-player" value=playerName action="addPlayer"}}
+    <div id='add_player'>
+      <h5>Add Player</h5>
+      {{input type="text" id="new-player" value=playerName action="addPlayer"}}
+    </div>
     </div>
 
     <div id='player_info'>
@@ -55,17 +62,17 @@
     <img {{bind-attr src='image'}} class='player_pic'>
     <h4 id='name'>{{name}}</h4>
     <div class='score'>
-      Total: {{total_scored}}
-      <p>------</p>
-      <p>Shots</p>
+      <span id='total_label'>Total:</span> <span id='total'> {{total_scored}}</span>
+
+      <h5>Shots:</h5>
       {{#each shot in shots}}
-        {{shot.scored}}
+        {{shot.scored}},
       {{/each}}
     </div>
-    <button class='shot' {{action "addShot" 0 this}}>Missed Shot</button>
-    <button class='shot' {{action "addShot" 1 this}}>Free Throw</button>
-    <button class='shot' {{action "addShot" 2 this}}>Field Goal</button>
-    <button class='shot' {{action "addShot" 3 this}}>Three Pointer</button>
+    <button class='shot_0' {{action "addShot" 0 this}}>Missed Shot</button>
+    <button class='shot_1' {{action "addShot" 1 this}}>Free Throw</button>
+    <button class='shot_2' {{action "addShot" 2 this}}>Field Goal</button>
+    <button class='shot_3' {{action "addShot" 3 this}}>Three Pointer</button>
   </script>
 
 

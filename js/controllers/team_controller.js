@@ -11,6 +11,7 @@ App.TeamController = Ember.ObjectController.extend({
       var n_player = this.store.createRecord('player', {
         name: name
       });
+      n_player.setProperties({ total_scored: 0});
       this.set('playerName', '');
       n_player.save;
       this.get('players').pushObject(n_player);
