@@ -8,11 +8,12 @@
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 </head>
 <body>
+
   <script type="text/x-handlebars">
     <div id='main'>
-    <h2><img src='imgs/logo.png' id='logo'>
-      Statskeepr</h2>
-      {{outlet}}
+      <h2><img src='imgs/logo.png' id='logo'>
+        Statskeepr</h2>
+        {{outlet}}
     </div>
   </script>
 
@@ -47,9 +48,19 @@
   <script type="text/x-handlebars" id="player">
     <img {{bind-attr src='image'}} class='player_pic'>
     <h4 id='name'>{{name}}</h4>
-    {{#each shotattempt in shotattempts}}
-      <div class='shotattempt'>{{shotattempt.scored}}</div>
-    {{/each}}
+    <div class='score'>
+      {{#each shot in shots}}
+        {{total_scored += shot.scored}}
+      {{/each}}
+      Total: {{total}}
+      {{#each shot in shots}}
+        {{shot.scored}}
+      {{/each}}
+    </div>
+    <button class='shot' {{action "addShot" 0 this}}>Missed Shot</button>
+    <button class='shot' {{action "addShot" 1 this}}>Free Throw</button>
+    <button class='shot' {{action "addShot" 2 this}}>Field Goal</button>
+    <button class='shot' {{action "addShot" 3 this}}>Three Pointer</button>
   </script>
 
 
@@ -62,7 +73,8 @@
   <script src="js/app.js"></script>
   <script src="js/models/team.js"></script>
   <script src="js/models/player.js"></script>
-  <script src="js/models/shotattempt.js"></script>
+  <script src="js/models/shot.js"></script>
+  <script src="js/controllers/player_controller.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
 </body>

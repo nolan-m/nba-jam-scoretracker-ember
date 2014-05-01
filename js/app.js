@@ -5,7 +5,9 @@ App.ApplicationAdapter = DS.FixtureAdapter.extend();
 App.Router.map(function() {
   this.resource('teams', { path: '/'}, function(){
     this.resource('team', { path: '/:team_id' }, function() {
-      this.resource('player', { path: '/:player_id'})
+      this.resource('player', { path: '/:player_id'}, function(){
+        this.resource('shot');
+      })
     });
   });
 });
@@ -23,6 +25,7 @@ App.PlayerRoute = Ember.Route.extend({
     return store.find('player', params.player_id);
   }
 });
+
 
 // App.TeamRoute = Ember.Route.extend({
 //   model: function(params) {
